@@ -10,7 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid getColor("input-border");
-  transition: border 250ms $cubic, background-image 250ms $cubic;
+  transition: border $time $cubic, background-image $time $cubic;
 
   &:hover,
   &:focus {
@@ -22,18 +22,4 @@
   position: absolute;
   bottom: 5%;
   right: 30%;
-  width: 200px;
-  height: 50px;
-  padding: 10px 55px;
-  font-size: 16px;
-  line-height: 0.5;
-  letter-spacing: 0.06em;
-  color: getColor("background");
-  background-color: getColor("hover");
-  box-shadow: 0px 4px 4px getColor("box-shadow");
-  border-radius: 4px;
-  // @media screen and (min-width: 1124px) {
-  //   bottom: 5%;
-  //   right: 31%;
-  // }
 }

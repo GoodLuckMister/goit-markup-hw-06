@@ -349,6 +349,7 @@ summary {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
+  border: none;
 }
 
 .container {
@@ -579,7 +580,7 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding-top: 25px;
+  padding-top: 30px;
   color: white;
 }
 
@@ -751,12 +752,14 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
-}
-
-.address {
-  margin-right: 100px;
 }
 
 .address .logo {
@@ -801,6 +804,58 @@ img {
 .symbol-list__item--decor {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-form__label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.footer-form__input {
+  width: 360px;
+  height: 50px;
+  background-color: #2f303a;
+  color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: 0;
+  padding-left: 16px;
+  margin-right: 6px;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form__input:focus {
+  border: 1px solid #2196f3;
+  color: #2196f3;
+}
+
+.footer-form__button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+}
+
+.footer-form__button::after {
+  content: " ";
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/optim-svg/icon-moon/iconsend.svg);
+  background-size: contain;
+  margin: 0px 0px 0px 10px;
 }
 
 .portfolio-list {
@@ -994,16 +1049,127 @@ img {
   position: absolute;
   bottom: 5%;
   right: 30%;
-  width: 200px;
-  height: 50px;
-  padding: 10px 55px;
-  font-size: 16px;
-  line-height: 0.5;
-  letter-spacing: 0.06em;
-  color: white;
-  background-color: #2196f3;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.form-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.input-box {
+  position: relative;
+  width: 450px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.input-box__input {
+  width: 450px;
+  height: 40px;
+  padding-left: 45px;
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-box__text {
+  position: absolute;
+  top: 13px;
+  left: 43px;
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-box__icon {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-box__input:focus {
+  color: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.input-box__input:focus + .input-box__text,
+.input-box__input:not(:placeholder-shown) + .input-box__text {
+  color: #2196f3;
+  -webkit-transform: translate(-37px, -40px);
+          transform: translate(-37px, -40px);
+}
+
+.input-box__input:focus ~ .input-box__icon,
+.input-box__input:not(:placeholder-shown) ~ .input-box__icon {
+  fill: #2196f3;
+}
+
+.comment {
+  width: 450px;
+  height: 120px;
+  padding: 10px;
+  resize: none;
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 25px;
+}
+
+.comment:focus {
+  border: 1px solid #2196f3;
+  color: #2196f3;
+}
+
+.checkbox {
+  overflow: hidden;
+}
+
+.checkbox__label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox__input {
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+
+.checkbox__icon {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #757575;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 16px;
+  height: 15px;
+  cursor: pointer;
+  background-image: url(../images/optim-svg/icon-moon/vector.svg);
+  -webkit-transform: translate(-11px, 1px);
+          transform: translate(-11px, 1px);
+  -webkit-transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox__input:checked + .checkbox__icon {
+  background-image: url(../images/optim-svg/icon-moon/icon-check.svg);
+}
+
+.checkbox__link {
+  color: #2196f3;
 }
 /*# sourceMappingURL=main.css.map */
