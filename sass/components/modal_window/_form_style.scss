@@ -1,0 +1,54 @@
+.form-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.form-box {
+  position: relative;
+  width: 370px;
+  height: 40px;
+  margin-bottom: 30px;
+  @media screen and (min-width: 1124px) {
+    width: 450px;
+  }
+
+  &_label_icon {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    transition: fill 250ms $cubic;
+  }
+  &_label_text {
+    position: absolute;
+    top: 13px;
+    left: 43px;
+    transition: transform 250ms $cubic;
+  }
+  &_input {
+    width: 370px;
+    height: 40px;
+    padding-left: 45px;
+    outline: none;
+    border: 1px solid getColor("input-border");
+    border-radius: 4px;
+    transition: color 250ms $cubic, border 250ms $cubic;
+    @media screen and (min-width: 1124px) {
+      width: 450px;
+    }
+  }
+  &_input:focus-within {
+    color: getColor("hover");
+    border: 1px solid getColor("hover");
+  }
+  &_input:focus-within + &_label_text {
+    color: getColor("hover");
+    transform: translate(-37px, -40px);
+  }
+  &_input:focus-within ~ &_label_icon {
+    fill: getColor("hover");
+  }
+}

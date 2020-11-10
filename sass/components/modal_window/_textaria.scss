@@ -1,0 +1,19 @@
+.comment {
+  width: 370px;
+  height: 120px;
+  padding: 10px;
+  resize: none;
+  outline: none;
+  border: 1px solid getColor("input-border");
+  border-radius: 4px;
+  outline: none;
+  transition: color 250ms $cubic, border 250ms $cubic;
+  margin-bottom: 25px;
+  @media screen and (min-width: 1124px) {
+    width: 450px;
+  }
+  &:focus {
+    border: 1px solid getColor("hover");
+    color: getColor("hover");
+  }
+}
